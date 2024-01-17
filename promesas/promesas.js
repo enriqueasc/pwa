@@ -2,7 +2,7 @@
 
 let promesaExitosa = new Promise((resolve, reject) => {
     setTimeout(() => {
-        reject('La operación fue exitosa');
+        reject('Algo salio mal');
     }, 4000);
 });
 
