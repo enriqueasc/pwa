@@ -1,8 +1,8 @@
 const sumarLento = (numero)=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            //resolve(numero +1 );
-            reject('error al pasar dato')
+            resolve(numero +1 );
+            //reject('error al pasar dato')
 
         },800);
 
@@ -20,7 +20,7 @@ const sumarRapido = (numero)=>{
 }
 
 
-Promise.all(sumarRapido(6), [sumarLento(5)])
+Promise.all([sumarRapido(6), sumarLento(5), true, "sumar"])
 .then(respuestas=>{
     console.log(respuestas)
     })
