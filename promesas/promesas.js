@@ -2,7 +2,8 @@ const sumarLento = (numero)=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             //resolve(numero +1 );
-            reject('error al pasar dato')
+            reject('error al sumar lento')
+
 
         },800);
 
@@ -12,15 +13,18 @@ const sumarLento = (numero)=>{
 const sumarRapido = (numero)=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            resolve(numero +1 );
+           resolve(numero +1 );
+           //reject('error al sumar rapido')
 
-        },300);
+
+        },800);
 
     })
 }
 
+// Promise.race compite entre las promesas y devuelve la primera que se resulva
 
-Promise.all(sumarRapido(6), [sumarLento(5)])
+Promise.race( [sumarLento(5), sumarRapido(6)])
 .then(respuestas=>{
     console.log(respuestas)
     })
