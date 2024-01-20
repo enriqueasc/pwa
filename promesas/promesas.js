@@ -1,30 +1,57 @@
-const sumarLento = (numero)=>{
+const funcionUno = (mensaje)=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            //resolve(numero +1 );
-            reject('error al sumar lento')
+            resolve(`Funcion ${mensaje} - 900`);
+            //reject('Funcion Uno 900')
 
 
-        },800);
+        },900);
 
     })
 }
 
-const sumarRapido = (numero)=>{
+const funcionDos = (mensaje)=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-           resolve(numero +1 );
+            resolve(`Funcion ${mensaje} - 300`);
+           //reject('error 2')
+
+
+        },300);
+
+    })
+}
+
+const funcionTres = (mensaje)=>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(`Funcion ${mensaje} - 500`);
            //reject('error al sumar rapido')
 
 
-        },800);
+        },500);
 
     })
 }
 
+const funcionCuatro = (mensaje)=>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(`Funcion ${mensaje} - 200`);
+           //reject('error al sumar rapido')
+
+
+        },200);
+
+    })
+}
+
+
 // Promise.race compite entre las promesas y devuelve la primera que se resulva
 
-Promise.race( [sumarLento(5), sumarRapido(6)])
+
+
+Promise.all( [funcionTres("3"),funcionUno("1"), funcionCuatro("4"), funcionDos("2")])
 .then(respuestas=>{
     console.log(respuestas)
     })
