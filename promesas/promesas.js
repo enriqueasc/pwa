@@ -1,16 +1,17 @@
 const esperarNVeces = (veces)=>{
     return new Promise((resolve, reject)=>{
 
-
+        let espera = 0;
+        
         for(let i = 1; i <= veces; i++){
             
-            let espera = i * 1000;
+            espera = i * 1000;
 
             console.log(i)
 
             setTimeout(()=>{
 
-                console.log(espera)
+                console.log("espera ", espera)
             
                 if(i  === veces){
                     resolve(`¡He esperado ${veces} veces!`)
@@ -18,16 +19,9 @@ const esperarNVeces = (veces)=>{
     
             },espera);
 
-            console.log(espera)
-            
-
-
-
+            console.log(typeof espera)
+        
         }
-
-
-
-       
 
     })
 }
