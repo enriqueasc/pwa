@@ -15,12 +15,14 @@ const funcionContiempo = (tiempo)=>{
     })
 }
 
-
-
-Promise.all([funcionContiempo(1500)])
-.then(respuestas=>{
-    console.log(respuestas)
+funcionContiempo(1400)
+    .then(resultado =>{
+        console.log(resultado);
+    } )
+    .catch(error =>{
+        console.log(error);
     })
-.catch(console.log);
+
+
 
 
