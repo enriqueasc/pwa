@@ -2,10 +2,10 @@ const funcionContiempo = (tiempo)=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             
-            if(tiempo > 1500){
-                reject('error al pasar dato')
+            if(tiempo >= 1500){
+                reject('se ha agotado el tiempo.')
             }else{
-                resolve('dato pasado correctamente')
+                resolve('Promesa resulta correctamente en menos de 1.5 segundos ')
             }
             
             
@@ -17,7 +17,7 @@ const funcionContiempo = (tiempo)=>{
 
 
 
-Promise.all([funcionContiempo(2500)])
+Promise.all([funcionContiempo(1500)])
 .then(respuestas=>{
     console.log(respuestas)
     })
