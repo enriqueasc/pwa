@@ -24,4 +24,3 @@ Promise.all([funcionContiempo(2500)])
 .catch(console.log);
 
 
-
