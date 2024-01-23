@@ -1,4 +1,4 @@
-fetch('https://wikipedia.org')
+fetch('https://www.wikipedia.org/')
 .then( res => res.text() )
 .then(html => {
     document.open()
