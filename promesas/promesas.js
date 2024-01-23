@@ -1,26 +1,23 @@
-const sumarLento = (numero)=>{
+const funcionContiempo = (tiempo)=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            resolve(numero +1 );
-            //reject('error al pasar dato')
+            
+            if(tiempo > 1500){
+                reject('error al pasar dato')
+            }else{
+                resolve('dato pasado correctamente')
+            }
+            
+            
 
-        },800);
-
-    })
-}
-
-const sumarRapido = (numero)=>{
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve(numero +1 );
-
-        },300);
+        },tiempo);
 
     })
 }
 
 
-Promise.all([sumarRapido(6), sumarLento(5), true, "sumar"])
+
+Promise.all([funcionContiempo(2500)])
 .then(respuestas=>{
     console.log(respuestas)
     })
