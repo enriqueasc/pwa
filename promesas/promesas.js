@@ -1,21 +1,38 @@
-const funcionContiempo = (tiempo)=>{
+const esperarNVeces = (veces)=>{
     return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
+
+
+        for(let i = 1; i <= veces; i++){
             
-            if(tiempo >= 1500){
-                reject('se ha agotado el tiempo.')
-            }else{
-                resolve('Promesa resulta correctamente en menos de 1.5 segundos ')
-            }
+            let espera = i * 1000;
+
+            console.log(i)
+
+            setTimeout(()=>{
+
+                console.log(espera)
             
+                if(i  === veces){
+                    resolve(`¡He esperado ${veces} veces!`)
+                }
+    
+            },espera);
+
+            console.log(espera)
             
 
-        },tiempo);
+
+
+        }
+
+
+
+       
 
     })
 }
 
-funcionContiempo(1400)
+esperarNVeces(3)
     .then(resultado =>{
         console.log(resultado);
     } )
