@@ -8,7 +8,7 @@ fetch('not-found.html')
     
    
     .catch( err => {
-        console.log('Error en la petición');
+        console.log('No se ha podido completar la solicitud');
         console.log(err);
     })
 
